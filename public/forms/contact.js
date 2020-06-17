@@ -9,11 +9,6 @@
     function js_onSuccess() {
         // remove this to avoid redirect
         window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
-        <div class="col-lg-12 mb-3">
-        <div class="loading">Loading</div>
-        <div class="error-message"></div>
-        <div class="sent-message">Your message has been sent. Thank you!</div>
-      </div>
     }
 
     function js_onError(error) {
@@ -41,7 +36,8 @@
         var name = document.querySelector("#" + form_id_js + " [name='name']").value;
         var email = document.querySelector("#" + form_id_js + " [name='email']").value;
         var message = document.querySelector("#" + form_id_js + " [name='message']").value;
-        data_js['subject'] = subject;
+
+        data_js['subject'] = email;
         data_js['text'] = message;
         data_js['name'] = name;
         data_js['email'] = email;
